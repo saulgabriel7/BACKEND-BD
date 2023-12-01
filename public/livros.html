@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros - Biblioteca Pessoal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/livros.html">Livros</a></li>
+                <li><a href="/autores.html">Autores</a></li>
+                <li><a href="/editoras.html">Editoras</a></li>
+            </ul>
+        </nav>
+        <h1>Livros</h1>
+    </header>
+
+    <main>
+    <div class="title">
+        <h2>Lista de Livros</h2>
+    </div>
+
+
+<button type="button" class="icon-btn-br" id="addBookBtn">  
+    <span class="button__text">Adicionar</span>
+    <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+  </button>
+
+  <div class="all">
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Data de Publicação</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="listaLivros"></tbody>
+    </table>
+  </div>
+
+    </main>
+
+<!-- Popup para Adicionar/Atualizar Livro -->
+<div id="bookPopup" class="hidden">
+    <form id="bookForm">
+        <h3>Adicionar/Atualizar Livro</h3>
+        <input type="hidden" id="id_livro">
+        <input type="text" id="titulo" placeholder="Título" required>
+        
+        <!-- Campo para seleção de autor -->
+        <div>
+            <label for="autor">Autor:</label>
+            <select id="autor" required>
+                <option value="">Selecione um autor</option>
+                <!-- Opções de autores serão adicionadas aqui -->
+                <option value="Gabriel García Márquez">Gabriel García Márquez</option>
+                <option value="J.K. Rowling">J.K. Rowling</option>
+                <option value="Haruki Murakami">Haruki Murakami</option>
+                <option value="Chimamanda Ngozi Adichie">Chimamanda Ngozi Adichie</option>
+                <option value="Neil Gaiman">Neil Gaiman</option>
+                <option value="Agatha Christie">Agatha Christie</option>
+                <option value="Paulo Coelho">Paulo Coelho</option>
+                <option value="George R.R. Martin">George R.R. Martin</option>
+                <option value="Toni Morrison">Toni Morrison</option>
+                <option value="Murilo Rubião">Murilo Rubião</option>
+            </select>
+        </div>
+
+        <!-- Campo para seleção de editora -->
+        <div>
+            <label for="editora">Editora:</label>
+            <select id="editora" required>
+                <option value="">Selecione uma editora</option>
+                <!-- Opções de editoras serão adicionadas aqui -->
+                <option value="Penguin Random House">Penguin Random House</option>
+                <option value="HarperCollins">HarperCollins</option>
+                <option value="Editora Intrínseca">Editora Intrínseca</option>
+                <option value="Companhia das Letras">Companhia das Letras</option>
+                <option value="Editora Record">Editora Record</option>
+                <option value="Dark Horse Comics">Dark Horse Comics</option>
+                <option value="Simon & Schuster">Simon & Schuster</option>
+                <option value="Springer">Springer</option>
+                <option value="Oxford University Press">Oxford University Press</option>
+                <option value="Bloomsbury">Bloomsbury</option>
+            </select>
+        </div>
+        
+        <input type="date" id="dataPublicacao" placeholder="Data de Publicação" required>
+        <button type="submit">Salvar</button>
+        <button type="button" id="closePopupBtn">Fechar</button>
+    </form>
+</div>
+
+
+    <style>
+        .all th
+        {
+            color: #fff;
+        }
+    </style>
+
+    <script src="/js/app.js"></script>
+    <script src="/js/livros.js"></script>
+</body>
+
+</html>

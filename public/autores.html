@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autores - Biblioteca Pessoal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/livros.html">Livros</a></li>
+                <li><a href="/autores.html">Autores</a></li>
+                <li><a href="/editoras.html">Editoras</a></li>
+            </ul>
+        </nav>
+        <h1>Autores</h1>
+    </header>
+
+    <main>
+    <div class="title">
+        <h2>Lista de Autores</h2>
+    </div>
+
+
+<button type="button" class="icon-btn-br" id="addBookBtn">  
+    <span class="button__text">Adicionar</span>
+    <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+  </button>
+
+  <div class="all">
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Biografia</th>
+                <th>Data de Nascimento</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="listaLivros"></tbody>
+    </table>
+  </div>
+
+    </main>
+
+    <!-- Popup para Adicionar/Atualizar Livro -->
+    <div id="bookPopup" class="hidden">
+        <form id="bookForm">
+            <h3>Adicionar/ Autores</h3>
+            <input type="hidden" id="id_livro">
+            <input type="text" id="titulo" placeholder="Nome" required>
+            <input type="text" id="autor" placeholder="Biografia" required>
+            <input type="date" id="dataPublicacao" placeholder="Data de Nascimento" required number>
+            <button type="submit">Salvar</button>
+            <button type="button" id="closePopupBtn">Fechar</button>
+        </form>
+    </div>
+
+    <style>
+        .all th
+        {
+            color: #fff;
+        }
+    </style>
+
+    <script src="/js/app.js"></script>
+    <script src="/js/livros.js"></script>
+</body>
+
+</html>
